@@ -1,0 +1,88 @@
+
+
+:root {
+    --primary-color: #9356DC;
+    --secondary-color: #FF79DA ;
+    --Tertiary-color: #99E2D0;
+}
+
+*, html { 
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    
+}
+
+.main-container {
+    display: flex;
+    text-align: center;
+    max-width: 375px;
+    flex-direction: column;
+
+} 
+
+
+.logo {
+    position: relative;
+    font-family: "Shrikhand", serif;
+    height: 63px;  
+    box-shadow:
+        0px 0.1px 1.2px rgba(0, 0, 0, 0.031),
+        0px 0.2px 2.1px rgba(0, 0, 0, 0.044),
+        0px 0.5px 2.8px rgba(0, 0, 0, 0.056),
+        0px 1.3px 3px rgba(0, 0, 0, 0.069),
+        0px 2px 5px rgba(0, 0, 0, 0.1);
+    
+
+ }
+
+.logo p {
+    font-size: 30px;
+    padding: 14px 0 13px 0;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none; 
+    
+}
+
+.localisation {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #EAEAEA;
+    height: 50px;
+    box-shadow:
+        0px 0.4px 2.5px rgba(0, 0, 0, 0.125),
+        0px 4px 5px rgba(0, 0, 0, 0.25);
+    
+}
+
+.localisation i {
+    margin-right: 17px;
+    
+}
+
+.localisation p {
+    padding-top: 15px;
+
+}
+
+.intro {
+    padding:0 30px;
+}
+
+.intro h2 {
+    margin: 0 15px;
+
+}
+
+.intro p {
+    font-size: 18px;
+    font-weight: 300;
+}

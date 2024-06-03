@@ -3,13 +3,13 @@
 :root {
     --primary-color: #9356DC;
     --secondary-color: #FF79DA ;
-    --Tertiary-color: #99E2D0;
+    --tertiary-color: #99E2D0;
 }
 
 *, html { 
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
     
 }
 
@@ -26,6 +26,15 @@ body {
     flex-direction: column;
 
 } 
+
+.fa-solid {
+    color: #7E7E7E; 
+    font-size: 20px; 
+}
+
+.fa-solid--violet {
+    color: #9356DC;
+}
 
 header {
     text-align: center;
@@ -101,36 +110,110 @@ header {
 }
 .fonctionnement {
     background-color: white;
-    height: 440px;
-    padding: 0 20px;
+    padding: 48px 20px 68px 20px;
+
+}
+
+.fonctionnement h2 {
+    padding-bottom: 26px;
 
 }
 
 
 .fonctionnement ol {
-    list-style: outside decimal;
+    
+    list-style: none;
+    counter-reset: li;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 24px;
     justify-content: flex-start;
+    position: relative;
 
 }
 
 .fonctionnement li {
-    /* height: 73px; */
+    counter-increment: li;
     background-color: #F6F6F6;
     border-radius: 20px;
     align-content: center;
     padding: 28px 0 28px 34px;
+    margin-left: 12px;
     box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.15);
-
+    font-weight: 500;
+    line-height: 15px;
     
 }
 
-
-
+.fonctionnement li::before {
+    content: counter(li); 
+    text-align: center;
+    color: white;
+    display: inline-block;
+    background-color: #9356DC;
+    border-radius: 25px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    left: 0px;
+    line-height: 25px;
+    
+}
 
 .fonctionnement i {
     margin-right: 23px;
 
+}
+
+
+.restaurant {
+    padding: 54px 18px 66px 17px;
+}
+
+.restaurant h2 {
+    padding-bottom: 20px ;
+    margin-left: 3px;
+}
+
+.card img {
+    height: 174px;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    display: block;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.card-content {
+    padding: 16px 43px 12px 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    
+    
+}
+
+.card-content p i {
+    position: absolute;
+    right: 25px;
+    top: 23px;
+    font-size: 25px;
+    color: red;
+
+}
+
+
+.card-titre {
+    font-size: 18px;
+}
+
+.card-texte {
+    font-size: 17px;
+    font-weight: 300;
 }

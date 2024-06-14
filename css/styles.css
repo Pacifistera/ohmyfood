@@ -1,0 +1,381 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #f6f6f6;
+}
+
+.main-container {
+  display: flex;
+  max-width: 375px;
+  flex-direction: column;
+}
+
+.fa-solid {
+  color: #7e7e7e;
+  font-size: 20px;
+}
+.fa-solid--violet {
+  color: #9356dc;
+}
+
+/* Section Header */
+header {
+  text-align: center;
+}
+
+.logo {
+  position: relative;
+  font-family: "Shrikhand", serif;
+  height: 63px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.logo p {
+  font-size: 30px;
+  padding: 14px 0 13px 0;
+}
+.logo a {
+  color: black;
+  text-decoration: none;
+}
+.logo i {
+  position: absolute;
+  left: 20px;
+  top: 23px;
+  color: black;
+}
+
+.logo-menu {
+  box-shadow: none;
+}
+
+.localisation {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #eaeaea;
+  height: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.localisation i {
+  margin-right: 17px;
+}
+.localisation p {
+  padding-top: 15px;
+}
+
+/* Section Intro */
+.intro {
+  padding: 39px 30px 57px 30px;
+  text-align: center;
+}
+.intro h2 {
+  margin: 0 15px;
+}
+.intro p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 12px 0 27px 0;
+}
+
+.button {
+  width: 218px;
+  height: 50px;
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  transition: all 1s ease-out;
+  border-radius: 25px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.button:hover, .button:focus {
+  background: linear-gradient(0deg, rgb(169, 130, 218) 0%, rgb(252, 144, 221) 100%);
+  font-size: 17px;
+}
+
+/* Section Fonctionnement */
+.fonctionnement {
+  background-color: white;
+  padding: 48px 20px 68px 20px;
+}
+.fonctionnement h2 {
+  padding-bottom: 26px;
+}
+.fonctionnement ol {
+  list-style: none;
+  counter-reset: li;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+  position: relative;
+}
+.fonctionnement li {
+  counter-increment: li;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  align-content: center;
+  padding: 28px 0 28px 34px;
+  margin-left: 12px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  line-height: 15px;
+}
+.fonctionnement li::before {
+  content: counter(li);
+  text-align: center;
+  color: white;
+  display: inline-block;
+  background-color: #9356dc;
+  border-radius: 25px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  left: 0px;
+  line-height: 25px;
+}
+.fonctionnement i {
+  margin-right: 23px;
+}
+
+/* Section restaurant */
+.restaurant {
+  padding: 54px 18px 66px 17px;
+}
+.restaurant h2 {
+  padding-bottom: 20px;
+  margin-left: 3px;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.restaurant-cards a {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+}
+.card img {
+  height: 174px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.new {
+  position: absolute;
+  background-color: #99e2d0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+  right: 15px;
+  top: 16px;
+  padding: 7px 9px;
+  border-radius: 3px;
+}
+
+.card-content {
+  padding: 16px 43px 12px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.card-titre {
+  font-size: 18px;
+}
+
+.card-texte {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+/* Animation du coeur LIKE */
+.card .vide,
+.card .rempli {
+  position: absolute;
+  z-index: 10;
+  right: 25px;
+  top: 23px;
+  border-radius: 0;
+  height: auto;
+  width: auto;
+}
+
+.card .rempli {
+  display: none;
+}
+
+.menu .vide,
+.menu .rempli {
+  position: absolute;
+  z-index: 10;
+  right: 35px;
+  top: 40px;
+  border-radius: 0;
+  height: auto;
+  width: auto;
+  background-color: #f6f6f6;
+}
+
+.menu .rempli {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ img.rempli {
+  display: block;
+}
+
+input[type=checkbox]:checked ~ img.vide {
+  display: none;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  top: 25px;
+  right: 26px;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+  z-index: 100;
+}
+
+input.coeur[type=checkbox] {
+  top: 39px;
+  right: 35px;
+}
+
+/* Section Footer */
+.footer {
+  background-color: #353535;
+  padding: 22px 0 22px 25px;
+  max-width: 375px;
+}
+.footer h5 {
+  font-family: "Shrikhand", serif;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer li {
+  list-style: none;
+  margin-bottom: 7px;
+}
+.footer li:last-child {
+  margin-bottom: 0;
+}
+.footer i {
+  font-size: 13px;
+  color: white;
+  padding-right: 22px;
+  width: 11px;
+}
+
+/* Page Menu */
+.image img {
+  height: 275px;
+  width: 100%;
+  display: block;
+}
+
+.menu {
+  padding: 32px 13px 40px 13px;
+  border-radius: 35px 35px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: -50px;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.menu i {
+  position: absolute;
+  top: 7px;
+  right: 24px;
+  font-size: 25px;
+}
+.menu h2 {
+  font-family: "Shrikhand", serif;
+  font-size: 28px;
+  padding-left: 4px;
+  font-weight: 500;
+  position: relative;
+}
+.menu p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.menu-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 12px 47px 12px 15px;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.menu-card p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.menu-card span {
+  position: absolute;
+  font-weight: 700;
+  font-size: 15px;
+  right: 15px;
+  top: 38px;
+}
+
+.entree,
+.plat,
+.dessert {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.titre {
+  position: relative;
+  padding-bottom: 7px;
+}
+.titre::before {
+  content: "";
+  border-bottom: 3px solid #99e2d0;
+  width: 12%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.commander {
+  text-align: center;
+}/*# sourceMappingURL=styles.css.map */

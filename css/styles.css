@@ -14,6 +14,7 @@ body {
 .main-container {
   display: flex;
   max-width: 375px;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -248,7 +249,7 @@ input[type=checkbox]:checked ~ img.vide {
   display: none;
 }
 
-input[type=checkbox] {
+input.coeur[type=checkbox] {
   position: absolute;
   top: 25px;
   right: 26px;
@@ -258,7 +259,7 @@ input[type=checkbox] {
   z-index: 100;
 }
 
-input.coeur[type=checkbox] {
+input.coeur-inside[type=checkbox] {
   top: 39px;
   right: 35px;
 }
@@ -332,27 +333,72 @@ input.coeur[type=checkbox] {
 .menu-card {
   background-color: white;
   border-radius: 15px;
-  padding: 12px 47px 12px 15px;
-  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.1);
   position: relative;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: stretch;
+  overflow: hidden;
+  justify-content: space-between;
 }
-.menu-card h3 {
+
+.menu-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 0 10px 15px;
+  width: 300px;
+}
+.menu-content h3 {
   font-size: 18px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 27px;
 }
-.menu-card p {
+.menu-content p {
   font-size: 15px;
+  line-height: 21px;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu-card span {
-  position: absolute;
+
+.menu-price {
   font-weight: 700;
   font-size: 15px;
-  right: 15px;
-  top: 38px;
+  margin-left: 80px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.menu-checked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -65px;
+  width: 65px;
+  background-color: #99e2d0;
+  transition: all 0.5s ease-in-out;
+}
+.menu-checked i {
+  font-size: 20px;
+  position: inherit;
+  color: white;
+}
+
+input.selected[type=checkbox] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+input.selected[type=checkbox]:checked ~ .menu-checked {
+  margin-right: 0;
 }
 
 .entree,
@@ -378,4 +424,75 @@ input.coeur[type=checkbox] {
 
 .commander {
   text-align: center;
+}
+
+.anim-load {
+  width: 100%;
+  height: 100%;
+  cursor: wait;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 30;
+  animation: cancel-load 100ms 3s forwards;
+}
+
+.loader {
+  width: 100px;
+  transform: rotateY(-360deg);
+  transform-style: preserve-3d;
+  animation: loader 2000ms 200ms linear;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+.loader p {
+  text-align: center;
+  font-family: "Shrikhand", serif;
+  justify-items: center;
+  color: white;
+}
+.loader i {
+  font-size: 100px;
+  color: white;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes cancel-load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.categ-menu {
+  animation: fadein 3s forwards;
+  opacity: 0;
+}
+.categ-menu:nth-of-type(1) {
+  animation-delay: 1s;
+}
+.categ-menu:nth-of-type(2) {
+  animation-delay: 2s;
+}
+.categ-menu:nth-of-type(3) {
+  animation-delay: 3s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */

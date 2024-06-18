@@ -13,7 +13,7 @@ body {
 
 .main-container {
   display: flex;
-  max-width: 375px;
+  max-width: 768px;
   width: 100%;
   flex-direction: column;
 }
@@ -26,7 +26,7 @@ body {
   color: #9356dc;
 }
 
-/* Section Header */
+/* Section Header */ /* Section Header */ /* Section Header */ /* Section Header */
 header {
   text-align: center;
 }
@@ -70,7 +70,7 @@ header {
   padding-top: 15px;
 }
 
-/* Section Intro */
+/* Section Intro */ /* Section Intro */ /* Section Intro */ /* Section Intro */
 .intro {
   padding: 39px 30px 57px 30px;
   text-align: center;
@@ -101,7 +101,7 @@ header {
   font-size: 17px;
 }
 
-/* Section Fonctionnement */
+/* Section Fonctionnement */ /* Section Fonctionnement */ /* Section Fonctionnement */ /* Section Fonctionnement */
 .fonctionnement {
   background-color: white;
   padding: 48px 20px 68px 20px;
@@ -147,7 +147,7 @@ header {
   margin-right: 23px;
 }
 
-/* Section restaurant */
+/* Section restaurant */ /* Section restaurant */ /* Section restaurant */ /* Section restaurant */ /* Section restaurant */
 .restaurant {
   padding: 54px 18px 66px 17px;
 }
@@ -209,7 +209,7 @@ header {
   font-weight: 300;
 }
 
-/* Animation du coeur LIKE */
+/* Animation du coeur LIKE */ /* Animation du coeur LIKE */ /* Animation du coeur LIKE */
 .card .vide,
 .card .rempli {
   position: absolute;
@@ -264,11 +264,11 @@ input.coeur-inside[type=checkbox] {
   right: 35px;
 }
 
-/* Section Footer */
+/* Section Footer */ /* Section Footer */ /* Section Footer */ /* Section Footer */ /* Section Footer */
 .footer {
   background-color: #353535;
   padding: 22px 0 22px 25px;
-  max-width: 375px;
+  width: 100%;
 }
 .footer h5 {
   font-family: "Shrikhand", serif;
@@ -295,11 +295,13 @@ input.coeur-inside[type=checkbox] {
   width: 11px;
 }
 
-/* Page Menu */
+/* Page Menu */ /* Page Menu */ /* Page Menu */ /* Page Menu */ /* Page Menu */ /* Page Menu */
 .image img {
   height: 275px;
   width: 100%;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menu {
@@ -416,7 +418,7 @@ input.selected[type=checkbox]:checked ~ .menu-checked {
 .titre::before {
   content: "";
   border-bottom: 3px solid #99e2d0;
-  width: 12%;
+  width: 42px;
   display: block;
   position: absolute;
   bottom: 0;
@@ -426,6 +428,7 @@ input.selected[type=checkbox]:checked ~ .menu-checked {
   text-align: center;
 }
 
+/* Animation loader */ /* Animation loader */ /* Animation loader */ /* Animation loader */
 .anim-load {
   width: 100%;
   height: 100%;
@@ -494,5 +497,164 @@ input.selected[type=checkbox]:checked ~ .menu-checked {
   }
   100% {
     opacity: 1;
+  }
+}
+/* medium devices (tablets, more than 768px) */
+@media (min-width: 768px) {
+  .main-container {
+    max-width: 1024px;
+    background: white;
+  }
+  .intro {
+    background: #f6f6f6;
+  }
+  .fonctionnement ol {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .fonctionnement li {
+    position: relative;
+    padding: 28px 48px 28px 34px;
+  }
+  .fonctionnement li::before {
+    left: -12px;
+  }
+  .restaurant {
+    padding: 54px 45px 66px 45px;
+    background-color: #f6f6f6;
+  }
+  .restaurant-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1 1 calc(50% - 10px);
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    padding: 62px 25px 22px 25px;
+  }
+  .footer ul {
+    display: flex;
+    gap: 25px;
+    margin-right: 30px;
+  }
+  .footer h5 {
+    text-align: right;
+  }
+  .footer li {
+    margin-bottom: 0;
+  }
+  /*page menu*/
+  .menu {
+    max-width: 768px;
+    width: 100%;
+    margin: -50px auto 0 auto;
+    padding: 56px 90px 40px 90px;
+  }
+  .menu h2 {
+    text-align: center;
+  }
+  .menu .vide,
+  .menu .rempli {
+    right: 190px;
+    top: 65px;
+  }
+  input.coeur-inside[type=checkbox] {
+    top: 65px;
+    right: 190px;
+  }
+  .entree,
+  .plat,
+  .dessert {
+    width: 100%;
+    max-width: 1024px;
+  }
+  .menu-card {
+    width: 100%;
+  }
+}
+/* big devices (desktop, more than 1024px) */
+@media (min-width: 1024px) {
+  .main-container {
+    max-width: 1440px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .intro {
+    padding-bottom: 30px;
+  }
+  .intro h2 {
+    font-size: 40px;
+  }
+  .intro p {
+    margin-top: 18px;
+  }
+  .fonctionnement {
+    padding: 48px 45px 68px 45px;
+  }
+  .fonctionnement h2,
+  .fonctionnement ol {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .fonctionnement ol {
+    justify-content: space-between;
+  }
+  .fonctionnement ol li {
+    max-width: 323px;
+    width: 100%;
+    padding-right: 23px;
+  }
+  .restaurant {
+    padding: 27px 45px 10px 45px;
+    width: 100%;
+    gap: 0;
+  }
+  .restaurant h2 {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .restaurant-cards {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .restaurant-cards .card {
+    max-width: 490px;
+    width: 47%;
+    flex: unset;
+  }
+  .footer h5 {
+    margin: -3px 45px 0 62px;
+  }
+  /*page menu*/
+  .menu {
+    padding: 56px 90px 40px 90px;
+    max-width: 1055px;
+    width: 100%;
+  }
+  .menu-card {
+    width: 634px;
+  }
+  .entree,
+  .plat,
+  .dessert {
+    max-width: 634px;
+    width: auto;
+    margin: 0 auto;
+  }
+  input.coeur-inside[type=checkbox] {
+    right: 345px;
+  }
+  .menu .vide,
+  .menu .rempli {
+    right: 345px;
   }
 }/*# sourceMappingURL=styles.css.map */

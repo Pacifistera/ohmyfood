@@ -22,9 +22,6 @@ body {
   color: #7e7e7e;
   font-size: 20px;
 }
-.fa-solid--violet {
-  color: #9356dc;
-}
 
 /* Section Header */ /* Section Header */ /* Section Header */ /* Section Header */
 header {
@@ -68,6 +65,10 @@ header {
 }
 .localisation p {
   padding-top: 15px;
+}
+.localisation input {
+  border: none;
+  background-color: transparent;
 }
 
 /* Section Intro */ /* Section Intro */ /* Section Intro */ /* Section Intro */
@@ -142,6 +143,9 @@ header {
   font-size: 14px;
   left: 0px;
   line-height: 25px;
+}
+.fonctionnement li:hover i {
+  color: #9356dc;
 }
 .fonctionnement i {
   margin-right: 23px;
@@ -478,17 +482,17 @@ input.selected[type=checkbox]:checked ~ .menu-checked {
   }
 }
 .categ-menu {
-  animation: fadein 3s forwards;
+  animation: fadein 300ms forwards ease-in-out;
   opacity: 0;
 }
 .categ-menu:nth-of-type(1) {
-  animation-delay: 1s;
+  animation-delay: 400ms;
 }
 .categ-menu:nth-of-type(2) {
-  animation-delay: 2s;
+  animation-delay: 800ms;
 }
 .categ-menu:nth-of-type(3) {
-  animation-delay: 3s;
+  animation-delay: 1200ms;
 }
 
 @keyframes fadein {

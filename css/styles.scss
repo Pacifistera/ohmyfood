@@ -26,10 +26,6 @@ body {
 .fa-solid {
   color: #7e7e7e;
   font-size: 20px;
-
-  &--violet {
-    color: $primary-color;
-  }
 }
 
 /* Section Header */ /* Section Header */ /* Section Header */ /* Section Header */
@@ -76,6 +72,11 @@ header {
   }
   p {
     padding-top: 15px;
+  }
+
+  input {
+    border: none;
+    background-color: transparent;
   }
 }
 
@@ -163,6 +164,11 @@ header {
       font-size: 14px;
       left: 0px;
       line-height: 25px;
+    }
+    &:hover {
+      i {
+        color: $primary-color;
+      }
     }
   }
 
@@ -447,8 +453,6 @@ input.selected[type='checkbox']:checked ~ .menu-checked {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  // animation: anim-debile 1s;
-  // border: 1px solid blue;
 }
 
 .titre {
@@ -535,10 +539,11 @@ input.selected[type='checkbox']:checked ~ .menu-checked {
 }
 
 .categ-menu {
-  animation: fadein 3s forwards;
-  @include delay(3, 1s);
+  animation: fadein 300ms forwards ease-in-out;
+  @include delay(3, 400ms);
   opacity: 0;
 }
+// autres façons de faire l'animation
 
 // $sections: '.entree', '.plat', '.dessert';
 

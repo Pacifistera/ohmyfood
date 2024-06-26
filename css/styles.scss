@@ -487,7 +487,7 @@ input.selected[type='checkbox']:checked ~ .menu-checked {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.85);
   z-index: 30;
   animation: cancel-load 100ms 3s forwards;

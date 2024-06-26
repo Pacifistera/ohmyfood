@@ -226,7 +226,9 @@ header {
 }
 
 .card .rempli {
-  display: none;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 200ms ease-in-out;
 }
 
 .menu .vide,
@@ -242,15 +244,18 @@ header {
 }
 
 .menu .rempli {
-  display: none;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 200ms ease-in-out;
 }
 
 input[type=checkbox]:checked ~ img.rempli {
-  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
 
 input[type=checkbox]:checked ~ img.vide {
-  display: none;
+  opacity: 0;
 }
 
 input.coeur[type=checkbox] {
